@@ -14,31 +14,28 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="attributes">
-      <UniqueIdentifier>{4c037495-5350-4e88-9c1f-7582ebc36a2f}</UniqueIdentifier>
+      <UniqueIdentifier>{554fc4bc-5bcd-498a-ac68-8c13b6617971}</UniqueIdentifier>
     </Filter>
     <Filter Include="products">
-      <UniqueIdentifier>{886cd659-2984-432f-98ad-6050492ed088}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="system">
-      <UniqueIdentifier>{dc7c96b7-fe70-41e0-a34b-e2d95b3aa9d3}</UniqueIdentifier>
+      <UniqueIdentifier>{f3d462b1-f346-4db9-bc27-2baf989646ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ооп1.cpp">
+    <ClCompile Include="..\..\ооп1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Price.h">
+    <ClInclude Include="..\..\attributes\Price.h">
       <Filter>attributes</Filter>
     </ClInclude>
-    <ClInclude Include="Quantity.h">
+    <ClInclude Include="..\..\attributes\Quantity.h">
       <Filter>attributes</Filter>
     </ClInclude>
-    <ClInclude Include="Weight.h">
+    <ClInclude Include="..\..\attributes\Weight.h">
       <Filter>attributes</Filter>
     </ClInclude>
-    <ClInclude Include="Product.h">
+    <ClInclude Include="..\..\products\Product.h">
       <Filter>products</Filter>
     </ClInclude>
   </ItemGroup>

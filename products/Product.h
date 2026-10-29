@@ -2,26 +2,25 @@
 #include <string>
 #include <memory>
 #include <iostream>
-#include "../attributes/price.h"
-#include "../attributes/quantity.h"
-#include "../attributes/weight.h"
-
+#include "Price.h"
+#include "Quantity.h"
+#include "Weight.h"
 class Warehouse;
 
 class Product {
 protected:
     int id;
     std::string name;
-    price price_;
-    quantity quantity_;
-    weight weight_;
+    Price price_;
+    Quantity quantity_;
+    Weight weight_;
     std::string category;
 
 public:
     static int nextId_;
 
-    // [ЭТАП 2] Изменен конструктор: ID генерируется автоматически!
-    Product(const std::string& name, const price& price, const quantity& quantity, const weight& weight, const std::string& category)
+    // ID генерируется автоматически
+    Product(const std::string& name, const Price& price, const Quantity& quantity, const Weight& weight, const std::string& category)
         : id(nextId_++), name(name), price_(price), quantity_(quantity), weight_(weight), category(category) {
     }
 
@@ -32,13 +31,13 @@ public:
     // Геттеры (реализация)
     int getId() const { return id; }
     std::string getName() const { return name; }
-    price getPrice() const { return price_; }
-    quantity getQuantity() const { return quantity_; }
-    weight getWeight() const { return weight_; }
+    Price getPrice() const { return price_; }
+    Quantity getQuantity() const { return quantity_; }
+    Weight getWeight() const { return weight_; }
     std::string getCategory() const { return category; }
 
-    // [ЭТАП 2] Реализация сеттеров и действий
-    void setPrice(const price& newPrice) {
+    //Реализация сеттеров и действий
+    void setPrice(const Price& newPrice) {
         price_ = newPrice;
     }
 
@@ -46,7 +45,7 @@ public:
         quantity_.change(delta);
     }
 
-    // [ЭТАП 2] Заглушка (в 3 этапе перенесем в Warehouse.h для полной работы)
+    // Заглушка (в 3 этапе перенесем в Warehouse.h для полной работы)
     virtual void transferTo(Warehouse& other) {
         // Реализация будет, когда появится класс Warehouse
     }
@@ -62,21 +61,21 @@ public:
 // --- Промежуточные категории ---
 class Electronics : public Product {
 public:
-    Electronics(const std::string& name, const price& price, const quantity& quantity, const weight& weight)
+    Electronics(const std::string& name, const Price& price, const Quantity& quantity, const Weight& weight)
         : Product(name, price, quantity, weight, "electronics") {
     }
 };
 
 class Clothing : public Product {
 public:
-    Clothing(const std::string& name, const price& price, const quantity& quantity, const weight& weight)
+    Clothing(const std::string& name, const Price& price, const Quantity& quantity, const Weight& weight)
         : Product(name, price, quantity, weight, "clothing") {
     }
 };
 
 class Food : public Product {
 public:
-    Food(const std::string& name, const price& price, const quantity& quantity, const weight& weight)
+    Food(const std::string& name, const Price& price, const Quantity& quantity, const Weight& weight)
         : Product(name, price, quantity, weight, "food") {
     }
 };
@@ -84,7 +83,7 @@ public:
 // --- Конкретные классы с реализацией clone() ---
 class Smartphone : public Electronics {
 public:
-    Smartphone(const std::string& name, const price& price, const quantity& quantity, const weight& weight)
+    Smartphone(const std::string& name, const Price& price, const Quantity& quantity, const Weight& weight)
         : Electronics(name, price, quantity, weight) {
     }
     std::unique_ptr<Product> clone() const override {

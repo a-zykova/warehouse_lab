@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{83e9eb44-e63c-4889-85fb-235993469587}</ProjectGuid>
-    <RootNamespace>ооп1</RootNamespace>
+    <ProjectGuid>{f61bdd8a-3c9b-4642-819a-f8a06b1513c6}</ProjectGuid>
+    <RootNamespace>warehouse</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -102,7 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\byk0v\OneDrive\Рабочий стол\прога\ооп1\products;C:\Users\byk0v\OneDrive\Рабочий стол\прога\ооп1\attributes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\products;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\attributes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -124,13 +124,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ооп1.cpp" />
+    <ClCompile Include="..\..\ооп1.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\products;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\attributes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Price.h" />
-    <ClInclude Include="Product.h" />
-    <ClInclude Include="Quantity.h" />
-    <ClInclude Include="Weight.h" />
+    <ClInclude Include="..\..\attributes\Price.h" />
+    <ClInclude Include="..\..\attributes\Quantity.h" />
+    <ClInclude Include="..\..\attributes\Weight.h" />
+    <ClInclude Include="..\..\products\Product.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
