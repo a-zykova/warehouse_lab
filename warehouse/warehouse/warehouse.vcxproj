@@ -102,7 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\products;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\attributes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\warehouse\warehouse;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\warehouse;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\products;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\attributes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +133,8 @@
     <ClInclude Include="..\..\attributes\Quantity.h" />
     <ClInclude Include="..\..\attributes\Weight.h" />
     <ClInclude Include="..\..\products\Product.h" />
+    <ClInclude Include="Factories.h" />
+    <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

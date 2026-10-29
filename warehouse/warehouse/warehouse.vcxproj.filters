@@ -38,5 +38,11 @@
     <ClInclude Include="..\..\products\Product.h">
       <Filter>products</Filter>
     </ClInclude>
+    <ClInclude Include="Warehouse.h">
+      <Filter>products</Filter>
+    </ClInclude>
+    <ClInclude Include="Factories.h">
+      <Filter>products</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

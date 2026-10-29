@@ -1,46 +1,44 @@
 ﻿#include <iostream>
 #include "Product.h"
+#include "Factories.h"
+#include "Warehouse.h"
 
 // Обязательно инициализируем статическую переменную (вне класса!)
 int Product::nextId_ = 1;
-
 int main() {
     try {
-        //  Демонстрация работы
-        std::cout << "=== Stage 2 Demonstration ===" << std::endl;
+        std::cout << "=== Stage 3: Warehouse and Factories ===" << std::endl;
 
-        // Создаем товары (ID генерируются автоматически: 1, 2, 3...)
-        Smartphone phone("iPhone 15", Price(1000), Quantity(10), Weight(0.2));
-        Milk milk("Milk 3.2%", Price(80), Quantity(50), Weight(1.0));
+        // 1. Создаем склад на 5 мест
+        Warehouse myWarehouse(5);
 
-        std::cout << "\n--- Initial Products ---" << std::endl;
-        phone.printInfo();
-        milk.printInfo();
+        // 2. Создаем фабрики
+        SmartphoneFactory phoneFactory;
+        MilkFactory milkFactory;
 
-        // Тестируем изменение данных
-        std::cout << "\n--- Modifying Milk ---" << std::endl;
-        milk.setPrice(Price(95)); // Изменили цену
-        milk.changeQuantity(-5);  // Уменьшили остаток на 5
-        milk.printInfo();
+        // 3. Добавляем товары через фабрики
+        myWarehouse.addProduct(phoneFactory.createProduct("iPhone", 1000, 10, 0.2));
+        myWarehouse.addProduct(milkFactory.createProduct("Milk", 80, 50, 1.0));
 
-        // Тестируем клонирование (глубокое копирование)
-        std::cout << "\n--- Cloning Smartphone ---" << std::endl;
-        auto clonedPhone = phone.clone();
-        clonedPhone->printInfo(); // У клона будет новый ID (3), но те же данные
-
-        // Тестируем исключение (отрицательная цена)
-        std::cout << "\n--- Trying to set negative price ---" << std::endl;
-        try {
-            Price badPrice(-50);
+        // 4. Проверяем Итератор (цикл for)
+        std::cout << "\n--- Products in Warehouse ---" << std::endl;
+        for (const auto& p : myWarehouse) {
+            p->printInfo();
         }
-        catch (const std::exception& e) {
-            std::cout << "Caught exception: " << e.what() << std::endl;
-        }
+
+        // 5. Проверяем копирование (Правило пяти)
+        std::cout << "\n--- Copying Warehouse ---" << std::endl;
+        Warehouse copyWarehouse = myWarehouse;
+        std::cout << "Copy size: " << copyWarehouse.size() << std::endl;
+
+        // 6. Проверяем поиск
+        std::cout << "\n--- Searching by ID ---" << std::endl;
+        Product* found = myWarehouse.findById(1);
+        if (found) found->printInfo();
 
     }
     catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
-
     return 0;
 }

@@ -45,10 +45,7 @@ public:
         quantity_.change(delta);
     }
 
-    // Заглушка (в 3 этапе перенесем в Warehouse.h для полной работы)
-    virtual void transferTo(Warehouse& other) {
-        // Реализация будет, когда появится класс Warehouse
-    }
+    virtual void transferTo(Warehouse& other);
 
     virtual void printInfo() const {
         std::cout << "[" << category << "] ID: " << id << " | " << name
