@@ -127,6 +127,13 @@
     <ClCompile Include="..\..\ооп1.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\products;C:\Users\byk0v\OneDrive\Рабочий стол\прога\warehouse\attributes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="Factories.cpp" />
+    <ClCompile Include="Price.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="Products.cpp" />
+    <ClCompile Include="Quantity.cpp" />
+    <ClCompile Include="Warehouse.cpp" />
+    <ClCompile Include="Weight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\attributes\Price.h" />
@@ -134,6 +141,7 @@
     <ClInclude Include="..\..\attributes\Weight.h" />
     <ClInclude Include="..\..\products\Product.h" />
     <ClInclude Include="Factories.h" />
+    <ClInclude Include="Products.h" />
     <ClInclude Include="Warehouse.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

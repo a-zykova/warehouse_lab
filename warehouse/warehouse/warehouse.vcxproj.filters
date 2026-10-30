@@ -24,6 +24,27 @@
     <ClCompile Include="..\..\ооп1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Price.cpp">
+      <Filter>attributes</Filter>
+    </ClCompile>
+    <ClCompile Include="Quantity.cpp">
+      <Filter>attributes</Filter>
+    </ClCompile>
+    <ClCompile Include="Weight.cpp">
+      <Filter>attributes</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>products</Filter>
+    </ClCompile>
+    <ClCompile Include="Products.cpp">
+      <Filter>products</Filter>
+    </ClCompile>
+    <ClCompile Include="Warehouse.cpp">
+      <Filter>products</Filter>
+    </ClCompile>
+    <ClCompile Include="Factories.cpp">
+      <Filter>products</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\attributes\Price.h">
@@ -42,6 +63,9 @@
       <Filter>products</Filter>
     </ClInclude>
     <ClInclude Include="Factories.h">
+      <Filter>products</Filter>
+    </ClInclude>
+    <ClInclude Include="Products.h">
       <Filter>products</Filter>
     </ClInclude>
   </ItemGroup>
